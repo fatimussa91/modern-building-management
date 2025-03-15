@@ -1,0 +1,143 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Facebook, 
+  Instagram, 
+  Twitter, 
+  Linkedin, 
+  ArrowRight 
+} from 'lucide-react';
+import Logo from '../ui/Logo';
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="bg-rok-950 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <Logo variant="white" size="lg" />
+            <p className="text-gray-300 mt-4 max-w-xs">
+              Professionelles Gebäudemanagement und umfassende Gebäudedienstleistungen für Ihre Immobilien.
+            </p>
+            <div className="flex space-x-4 mt-6">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Facebook size={20} />
+                <span className="sr-only">Facebook</span>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Instagram size={20} />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Twitter size={20} />
+                <span className="sr-only">Twitter</span>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin size={20} />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Quick Links */}
+          <div>
+            <h5 className="font-semibold text-lg mb-5">Schnelllinks</h5>
+            <ul className="space-y-3">
+              {[
+                { name: 'Startseite', path: '/' },
+                { name: 'Über uns', path: '/about' },
+                { name: 'Leistungen', path: '/services' },
+                { name: 'Kontakt', path: '/contact' },
+                { name: 'Datenschutz', path: '#' },
+                { name: 'Impressum', path: '#' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.path}
+                    className="text-gray-300 hover:text-white transition-colors flex items-center group"
+                  >
+                    <ArrowRight 
+                      size={14} 
+                      className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"
+                    />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Services */}
+          <div>
+            <h5 className="font-semibold text-lg mb-5">Leistungen</h5>
+            <ul className="space-y-3">
+              {[
+                'Gebäudereinigung',
+                'Hausmeisterservice',
+                'Technisches Facility Management',
+                'Objektbetreuung',
+                'Grünflächenpflege',
+                'Winterdienst',
+              ].map((service) => (
+                <li key={service}>
+                  <Link 
+                    to="/services"
+                    className="text-gray-300 hover:text-white transition-colors flex items-center group"
+                  >
+                    <ArrowRight 
+                      size={14} 
+                      className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"
+                    />
+                    {service}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Contact Info */}
+          <div>
+            <h5 className="font-semibold text-lg mb-5">Kontakt</h5>
+            <ul className="space-y-4">
+              <li className="flex">
+                <MapPin size={20} className="text-rok-400 mr-3 flex-shrink-0 mt-1" />
+                <span className="text-gray-300">
+                  Musterstraße 123<br />
+                  12345 Musterstadt<br />
+                  Deutschland
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={20} className="text-rok-400 mr-3 flex-shrink-0" />
+                <a href="tel:+49123456789" className="text-gray-300 hover:text-white transition-colors">
+                  +49 (0) 123 456 789
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Mail size={20} className="text-rok-400 mr-3 flex-shrink-0" />
+                <a href="mailto:info@rok-gebaeudemanagement.de" className="text-gray-300 hover:text-white transition-colors">
+                  info@rok-gebaeudemanagement.de
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p className="text-gray-400 text-sm">
+            © {currentYear} ROK Gebäudemanagement. Alle Rechte vorbehalten.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
