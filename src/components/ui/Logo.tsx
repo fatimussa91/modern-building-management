@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 interface LogoProps {
@@ -17,13 +16,12 @@ const Logo = ({ className, size = 'md', variant = 'default' }: LogoProps) => {
   };
 
   const variantClasses = {
-    default: 'text-rok-700',
+    default: 'text-gray-800',
     white: 'text-white',
   };
 
   return (
-    <Link 
-      to="/"
+    <div 
       className={cn(
         'font-bold tracking-tighter transition-all duration-200 transform hover:scale-105',
         sizeClasses[size],
@@ -32,8 +30,8 @@ const Logo = ({ className, size = 'md', variant = 'default' }: LogoProps) => {
       )}
     >
       <span className="inline-block mr-[1px]">RO</span>
-      <span className="inline-block text-rok-500">K</span>
-    </Link>
+      <span className="inline-block text-cyan-500">K</span>
+    </div>
   );
 };
 
