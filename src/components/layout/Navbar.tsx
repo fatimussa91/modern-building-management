@@ -1,21 +1,20 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import Logo from '../ui/Logo';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { name: 'Startseite', path: '/' },
-  { name: 'Über uns', path: '/about' },
-  { name: 'Leistungen', path: '/services' },
-  { name: 'Kontakt', path: '/contact' },
+  { name: 'Startseite', path: '/#home' },
+  { name: 'Über uns', path: '/#about' },
+  { name: 'Leistungen', path: '/#services' },
+  { name: 'Kontakt', path: '/#contact' },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   // Handle scroll effect
   useEffect(() => {
@@ -31,10 +30,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  // Smooth scroll function
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    e.preventDefault();
+    const section = document.querySelector(target);
+    if (section) {
+      window.scrollTo({
+        top: section.getBoundingClientRect().top + window.scrollY - 100,
+        behavior: 'smooth'
+      });
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -53,21 +60,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.path}
-                to={link.path}
-                className={cn(
-                  'text-sm font-medium transition-colors hover:text-rok-500 relative py-2',
-                  location.pathname === link.path
-                    ? 'text-rok-600'
-                    : 'text-foreground/80'
-                )}
+                href={link.path}
+                onClick={(e) => scrollToSection(e, link.path.replace('/#', '#'))}
+                className="text-sm font-medium transition-colors hover:text-rok-500 relative py-2 text-foreground/80"
               >
                 {link.name}
-                {location.pathname === link.path && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-rok-500 transform animate-fade-in" />
-                )}
-              </Link>
+              </a>
             ))}
             
             <Link 
@@ -105,18 +105,14 @@ const Navbar = () => {
       >
         <div className="px-4 pt-2 pb-4 space-y-1 bg-white/95 backdrop-blur-sm border-t">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.path}
-              to={link.path}
-              className={cn(
-                'block px-3 py-3 text-base font-medium rounded-md',
-                location.pathname === link.path
-                  ? 'text-rok-600 bg-rok-50'
-                  : 'text-foreground hover:bg-accent'
-              )}
+              href={link.path}
+              onClick={(e) => scrollToSection(e, link.path.replace('/#', '#'))}
+              className="block px-3 py-3 text-base font-medium rounded-md text-foreground hover:bg-accent"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
           <Link
             to="/login"
