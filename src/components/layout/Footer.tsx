@@ -96,8 +96,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-rok-400 mr-3 flex-shrink-0" />
-                <a href="mailto:fatimussa91@gmail.com" className="text-gray-300 hover:text-white transition-colors">
-                  fatimussa91@gmail.com
+                <a href="mailto:info@rokgebaeudemanagement.de" className="text-gray-300 hover:text-white transition-colors">
+                  info@rokgebaeudemanagement.de
                 </a>
               </li>
             </ul>
