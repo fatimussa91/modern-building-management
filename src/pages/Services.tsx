@@ -25,12 +25,6 @@ const Services = () => {
       delay: 100
     },
     {
-      title: 'Technisches Facility Management',
-      description: 'Komplette Überwachung und Wartung aller technischen Anlagen in Ihrer Immobilie.',
-      icon: <Wrench className="w-6 h-6" />,
-      delay: 200
-    },
-    {
       title: 'Hausmeisterservice',
       description: 'Zuverlässige Betreuung Ihrer Immobilie mit regelmäßigen Kontrollen und schneller Reaktionszeit.',
       icon: <Building className="w-6 h-6" />,
