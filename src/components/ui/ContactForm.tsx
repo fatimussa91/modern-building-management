@@ -28,8 +28,8 @@ const ContactForm = () => {
       emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
 
       await emailjs.send(
-        "service_g549p2d", // Replace with your actual service ID from EmailJS
-        "template_8huhp1c", // Replace with your actual template ID from EmailJS
+        "service_", // Replace with your actual service ID from EmailJS
+        "template_", // Replace with your actual template ID from EmailJS
         {
           from_name: formData.name,
           from_email: formData.email,
