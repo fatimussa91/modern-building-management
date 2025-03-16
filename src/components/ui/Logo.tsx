@@ -1,6 +1,5 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import MedienImage from '@/components/layout/Medien.jpg'; // Adjust path based on your structure
 
 interface LogoProps {
   className?: string;
@@ -16,7 +15,7 @@ const Logo = ({ className, size = 'md' }: LogoProps) => {
 
   return (
     <div className={cn('transition-all duration-200 transform hover:scale-105', className)}>
-     <img src={require('@/components/layout/Medien.jpg')} alt="Logo" className="w-32 h-auto" />
+     <img src="/Medien.jpg" alt="Logo" className="w-32 h-auto" />
     </div>
   );
 };
