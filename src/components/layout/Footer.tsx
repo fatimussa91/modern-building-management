@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
@@ -13,6 +12,18 @@ import Logo from '../ui/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  // Smooth scroll function
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    e.preventDefault();
+    const section = document.querySelector(target);
+    if (section) {
+      window.scrollTo({
+        top: section.getBoundingClientRect().top + window.scrollY - 100,
+        behavior: 'smooth'
+      });
+    }
+  };
   
   return (
     <footer className="bg-rok-950 text-white">
@@ -41,16 +52,17 @@ const Footer = () => {
             <h5 className="font-semibold text-lg mb-5">Schnelllinks</h5>
             <ul className="space-y-3">
               {[
-                { name: 'Startseite', path: '/#home' },
-                { name: 'Über uns', path: '/#about' },
-                { name: 'Leistungen', path: '/#services' },
-                { name: 'Kontakt', path: '/#contact' },
+                { name: 'Startseite', path: '#home' },
+                { name: 'Über uns', path: '#about' },
+                { name: 'Leistungen', path: '#services' },
+                { name: 'Kontakt', path: '#contact' },
                 { name: 'Datenschutz', path: '#' },
                 { name: 'Impressum', path: '#' },
               ].map((link) => (
                 <li key={link.name}>
                   <a 
                     href={link.path}
+                    onClick={(e) => link.path.startsWith('#') ? scrollToSection(e, link.path) : null}
                     className="text-gray-300 hover:text-white transition-colors flex items-center group"
                   >
                     <ArrowRight 

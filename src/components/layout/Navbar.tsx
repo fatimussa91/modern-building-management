@@ -1,15 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from '../ui/Logo';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { name: 'Startseite', path: '/#home' },
-  { name: 'Über uns', path: '/#about' },
-  { name: 'Leistungen', path: '/#services' },
-  { name: 'Kontakt', path: '/#contact' },
+  { name: 'Startseite', path: '#home' },
+  { name: 'Über uns', path: '#about' },
+  { name: 'Leistungen', path: '#services' },
+  { name: 'Kontakt', path: '#contact' },
 ];
 
 const Navbar = () => {
@@ -63,7 +62,7 @@ const Navbar = () => {
               <a
                 key={link.path}
                 href={link.path}
-                onClick={(e) => scrollToSection(e, link.path.replace('/#', '#'))}
+                onClick={(e) => scrollToSection(e, link.path)}
                 className="text-sm font-medium transition-colors hover:text-rok-500 relative py-2 text-foreground/80"
               >
                 {link.name}
@@ -101,7 +100,7 @@ const Navbar = () => {
             <a
               key={link.path}
               href={link.path}
-              onClick={(e) => scrollToSection(e, link.path.replace('/#', '#'))}
+              onClick={(e) => scrollToSection(e, link.path)}
               className="block px-3 py-3 text-base font-medium rounded-md text-foreground hover:bg-accent"
             >
               {link.name}

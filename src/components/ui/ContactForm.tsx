@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -23,49 +24,40 @@ const ContactForm = () => {
     setLoading(true);
     
     try {
-      // Use the email.js library to send the email directly
-      const serviceID = 'default_service'; // Replace with your Service ID
-      const templateID = 'template_id'; // Replace with your Template ID
-      const userID = 'user_id'; // Replace with your User ID
+      // EmailJS configuration
+      // Replace these with your actual EmailJS credentials
+      const serviceID = 'service_id'; // Your EmailJS service ID
+      const templateID = 'template_id'; // Your EmailJS template ID
+      const userID = 'public_key'; // Your EmailJS public key
       
-      // Send email directly
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          from_phone: formData.phone,
+          message: formData.message
         },
-        body: JSON.stringify({
-          service_id: serviceID,
-          template_id: templateID,
-          user_id: userID,
-          template_params: {
-            from_name: formData.name,
-            from_email: formData.email,
-            from_phone: formData.phone,
-            message: formData.message
-          }
-        })
+        userID
+      );
+      
+      // Success message
+      toast({
+        title: "Nachricht gesendet",
+        description: "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.",
+        variant: "default",
       });
       
-      if (response.ok) {
-        // Success message
-        toast({
-          title: "Nachricht gesendet",
-          description: "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.",
-          variant: "default",
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Failed to send email');
-      }
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
     } catch (error) {
+      console.error('Failed to send email:', error);
       // Error message
       toast({
         title: "Fehler",
