@@ -28,8 +28,8 @@ const ContactForm = () => {
       emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
 
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your actual service ID from EmailJS
-        "YOUR_TEMPLATE_ID", // Replace with your actual template ID from EmailJS
+        "service_g549p2d", // Replace with your actual service ID from EmailJS
+        "template_8huhp1c", // Replace with your actual template ID from EmailJS
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -107,10 +107,10 @@ const ContactForm = () => {
             <div>
               <h4 className="font-medium">E-Mail</h4>
               <a 
-                href="mailto:fatimussa91@gmail.com" 
+                href="mailto:info@rokgebaeudemanagement.de" 
                 className="text-muted-foreground hover:text-rok-600 transition-colors block mt-1"
               >
-                fatimussa91@gmail.com
+                info@rokgebaeudemanagement.de
               </a>
             </div>
           </div>
