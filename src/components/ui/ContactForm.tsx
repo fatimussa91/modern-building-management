@@ -24,22 +24,18 @@ const ContactForm = () => {
     setLoading(true);
     
     try {
-      // EmailJS configuration
-      // Replace these with your actual EmailJS credentials
-      const serviceID = 'service_id'; // Your EmailJS service ID
-      const templateID = 'template_id'; // Your EmailJS template ID
-      const userID = 'public_key'; // Your EmailJS public key
-      
+      // Initialize EmailJS with your public key
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
+
       await emailjs.send(
-        serviceID,
-        templateID,
+        "YOUR_SERVICE_ID", // Replace with your actual service ID from EmailJS
+        "YOUR_TEMPLATE_ID", // Replace with your actual template ID from EmailJS
         {
           from_name: formData.name,
           from_email: formData.email,
           from_phone: formData.phone,
           message: formData.message
-        },
-        userID
+        }
       );
       
       // Success message
