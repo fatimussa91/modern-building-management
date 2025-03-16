@@ -94,7 +94,7 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="rok-input"
-                placeholder="admin@rok-gebaeudemanagement.de"
+                placeholder="fatimussa91@gmail.com"
               />
             </div>
             
@@ -150,7 +150,7 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Hinweis: Für die Demo-Version, nutzen Sie:<br />
-              <span className="font-medium">E-Mail: admin@rok-gebaeudemanagement.de</span><br />
+              <span className="font-medium">E-Mail: fatimussa91@gmail.com</span><br />
               <span className="font-medium">Passwort: admin</span>
             </p>
           </div>
