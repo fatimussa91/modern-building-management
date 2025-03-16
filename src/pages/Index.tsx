@@ -1,13 +1,11 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Building, Shield, Users, Clock, CheckCircle, Brush, Wrench, Thermometer, ArrowRight, Phone, Mail, MapPin, Award, ThumbsUp, Target } from 'lucide-react';
+import { CheckCircle, Brush, ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
 import Logo from '@/components/ui/Logo';
 import ServiceCard from '@/components/ui/ServiceCard';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import TeamMember from '@/components/ui/TeamMember';
 import ContactForm from '@/components/ui/ContactForm';
 
 const Index = () => {
@@ -65,69 +63,6 @@ const Index = () => {
       description: 'Professionelle Reinigung von Geschäfts- und Wohngebäuden für ein optimales Erscheinungsbild.',
       icon: <Brush className="w-6 h-6" />,
       delay: 100
-    },
-    {
-      title: 'Technisches Facility Management',
-      description: 'Komplette Überwachung und Wartung aller technischen Anlagen in Ihrer Immobilie.',
-      icon: <Wrench className="w-6 h-6" />,
-      delay: 200
-    },
-    {
-      title: 'Hausmeisterservice',
-      description: 'Zuverlässige Betreuung Ihrer Immobilie mit regelmäßigen Kontrollen und schneller Reaktionszeit.',
-      icon: <Building className="w-6 h-6" />,
-      delay: 300
-    },
-    {
-      title: 'Winterdienst',
-      description: 'Professioneller Winterdienst zur Sicherstellung der Verkehrssicherheit auf Ihrem Grundstück.',
-      icon: <Thermometer className="w-6 h-6" />,
-      delay: 400
-    }
-  ];
-
-  const coreValues = [
-    {
-      title: 'Qualität',
-      description: 'Wir setzen höchste Standards bei allen unseren Dienstleistungen und streben stets nach exzellenten Ergebnissen.',
-      icon: <Award className="w-8 h-8" />
-    },
-    {
-      title: 'Kundenzufriedenheit',
-      description: 'Die Zufriedenheit unserer Kunden steht im Mittelpunkt unseres Handelns. Wir hören zu und passen unsere Leistungen an Ihre Bedürfnisse an.',
-      icon: <ThumbsUp className="w-8 h-8" />
-    },
-    {
-      title: 'Nachhaltigkeit',
-      description: 'Wir berücksichtigen Umweltaspekte in unseren Dienstleistungen und fördern nachhaltige Praktiken im Gebäudemanagement.',
-      icon: <Target className="w-8 h-8" />
-    }
-  ];
-
-  const teamMembers = [
-    {
-      name: 'Robert Krause',
-      role: 'Geschäftsführer',
-      image: '/images/team-member-1.jpg',
-      bio: 'Mit über 20 Jahren Erfahrung im Gebäudemanagement leitet Robert unser Unternehmen mit Expertise und Leidenschaft.',
-      email: 'r.krause@rok-gebaeudemanagement.de',
-      linkedin: '#'
-    },
-    {
-      name: 'Olivia Becker',
-      role: 'Betriebsleiterin',
-      image: '/images/team-member-2.jpg',
-      bio: 'Olivia koordiniert unser Betriebsteam und sorgt für reibungslose Abläufe bei allen Projekten.',
-      email: 'o.becker@rok-gebaeudemanagement.de',
-      linkedin: '#'
-    },
-    {
-      name: 'Karl Weber',
-      role: 'Technischer Leiter',
-      image: '/images/team-member-3.jpg',
-      bio: 'Karl bringt sein umfangreiches technisches Know-how ein und leitet unsere Facility Management Abteilung.',
-      email: 'k.weber@rok-gebaeudemanagement.de',
-      linkedin: '#'
     }
   ];
 
@@ -176,7 +111,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 lg:gap-8 max-w-3xl mx-auto">
               {services.map((service, index) => (
                 <ServiceCard
                   key={index}
@@ -201,74 +136,15 @@ const Index = () => {
               </p>
             </div>
             
-            {/* Company Story */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              <div className="order-2 lg:order-1 animate-fade-up">
-                <h3 className="text-2xl font-semibold mb-6">Unsere Geschichte</h3>
+            {/* Company description */}
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-white p-8 rounded-xl shadow-sm border text-center animate-fade-up">
                 <p className="text-muted-foreground mb-4">
-                  ROK Gebäudemanagement wurde 2005 von Robert Krause gegründet, mit der Vision, hochwertige und zuverlässige Gebäudemanagement-Dienstleistungen anzubieten, die auf die individuellen Bedürfnisse der Kunden zugeschnitten sind.
+                  ROK Gebäudemanagement bietet hochwertige und zuverlässige Gebäudemanagement-Dienstleistungen an, die auf die individuellen Bedürfnisse der Kunden zugeschnitten sind.
                 </p>
-                <p className="text-muted-foreground mb-4">
-                  Was als kleines Unternehmen mit nur wenigen Mitarbeitern begann, hat sich zu einem führenden Anbieter von Gebäudemanagement-Dienstleistungen in der Region entwickelt. Heute betreuen wir eine Vielzahl von Objekten, von Bürogebäuden und Geschäftsflächen bis hin zu Wohnanlagen und öffentlichen Einrichtungen.
+                <p className="text-muted-foreground">
+                  Unser Erfolgsrezept ist die Kombination aus technischem Know-how, langjähriger Erfahrung und einem hohen Maß an Kundenorientierung. Wir sorgen mit Engagement und Leidenschaft für die Zufriedenheit unserer Kunden.
                 </p>
-                <p className="text-muted-foreground mb-6">
-                  Unser Erfolgsrezept ist die Kombination aus technischem Know-how, langjähriger Erfahrung und einem hohen Maß an Kundenorientierung. Wir sind stolz auf unser Team aus Fachleuten, die mit Engagement und Leidenschaft für die Zufriedenheit unserer Kunden sorgen.
-                </p>
-              </div>
-              <div className="order-1 lg:order-2 animate-fade-up" style={{ animationDelay: "200ms" }}>
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/company-story.jpg" 
-                    alt="ROK Gebäudemanagement Team" 
-                    className="w-full h-auto"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <p className="font-medium">Gegründet 2005</p>
-                    <h3 className="text-xl font-semibold">Mit Erfahrung und Leidenschaft</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Core Values */}
-            <div className="mt-16">
-              <h3 className="text-2xl font-semibold mb-6 text-center">Unsere Werte</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                {coreValues.map((value, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white p-8 rounded-xl shadow-sm border text-center animate-fade-up"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 text-cyan-600 rounded-full mb-5">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-muted-foreground">
-                      {value.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Team Section */}
-            <div className="mt-16">
-              <h3 className="text-2xl font-semibold mb-6 text-center">Unser Team</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                {teamMembers.map((member, index) => (
-                  <TeamMember
-                    key={index}
-                    name={member.name}
-                    role={member.role}
-                    image={member.image}
-                    bio={member.bio}
-                    delay={index * 100}
-                    email={member.email}
-                    linkedin={member.linkedin}
-                  />
-                ))}
               </div>
             </div>
           </div>
@@ -285,156 +161,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div className="space-y-8 animate-fade-up">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4">Kontaktinformationen</h3>
-                  <p className="text-muted-foreground">
-                    Unser Team steht Ihnen für Fragen und Angebote gerne zur Verfügung. Kontaktieren Sie uns per Telefon, E-Mail oder nutzen Sie unser Kontaktformular.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-cyan-500 mt-1 mr-3" />
-                    <div>
-                      <h4 className="font-medium">Adresse</h4>
-                      <address className="text-muted-foreground not-italic mt-1">
-                        Musterstraße 123<br />
-                        12345 Musterstadt<br />
-                        Deutschland
-                      </address>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Phone className="w-5 h-5 text-cyan-500 mt-1 mr-3" />
-                    <div>
-                      <h4 className="font-medium">Telefon</h4>
-                      <a 
-                        href="tel:+49123456789" 
-                        className="text-muted-foreground hover:text-cyan-600 transition-colors block mt-1"
-                      >
-                        +49 (0) 123 456 789
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Mail className="w-5 h-5 text-cyan-500 mt-1 mr-3" />
-                    <div>
-                      <h4 className="font-medium">E-Mail</h4>
-                      <a 
-                        href="mailto:info@rok-gebaeudemanagement.de" 
-                        className="text-muted-foreground hover:text-cyan-600 transition-colors block mt-1"
-                      >
-                        info@rok-gebaeudemanagement.de
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                  <h4 className="font-medium mb-2">Geschäftszeiten</h4>
-                  <dl className="space-y-2">
-                    <div className="flex justify-between">
-                      <dt>Montag - Freitag:</dt>
-                      <dd>08:00 - 17:00 Uhr</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt>Samstag:</dt>
-                      <dd>Nach Vereinbarung</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt>Sonntag:</dt>
-                      <dd>Geschlossen</dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-
-              {/* Contact Form */}
-              <div className="bg-white rounded-xl shadow-md border p-6 sm:p-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
-                <h3 className="text-xl font-semibold mb-6">Senden Sie uns eine Nachricht</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                      placeholder="Ihr vollständiger Name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
-                      E-Mail
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                      placeholder="ihre-email@beispiel.de"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-1">
-                      Telefon
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                      placeholder="+49 123 456789"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
-                      Nachricht
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
-                      placeholder="Wie können wir Ihnen helfen?"
-                    />
-                  </div>
-                  
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
-                    >
-                      {loading ? 'Wird gesendet...' : 'Nachricht senden'}
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <ContactForm />
           </div>
           
           {/* Map Section */}
@@ -449,7 +176,7 @@ const Index = () => {
               
               <div className="rounded-xl overflow-hidden shadow-lg animate-fade-up" style={{ animationDelay: "100ms" }}>
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.4092231792297!2d13.3767408!3d52.5162746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBrandenburg%20Gate!5e0!3m2!1sen!2sde!4v1638447137099!5m2!1sen!2sde" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2651.0990151663014!2d11.4289945!3d48.264332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7a921f0e9a95%3A0x9ef949aba60e5e89!2sGottesackerstra%C3%9Fe%201%2C%2085221%20Dachau!5e0!3m2!1sde!2sde!4v1718641407788!5m2!1sde!2sde"
                   width="100%" 
                   height="450" 
                   style={{ border: 0 }} 
@@ -487,16 +214,6 @@ const Index = () => {
                     question: "Sind Ihre Dienstleistungen individuell anpassbar?",
                     answer: "Ja, alle unsere Dienstleistungen werden individuell auf Ihre Bedürfnisse zugeschnitten. Wir erstellen nach einer genauen Analyse Ihrer Immobilie ein maßgeschneidertes Konzept für Sie.",
                     delay: 300
-                  },
-                  {
-                    question: "Wie oft führen Sie Qualitätskontrollen durch?",
-                    answer: "Qualitätskontrollen sind ein integraler Bestandteil unserer Dienstleistungen. Je nach Vereinbarung führen wir regelmäßige Kontrollen durch und stellen Ihnen auf Wunsch detaillierte Berichte zur Verfügung.",
-                    delay: 400
-                  },
-                  {
-                    question: "Kann ich den Umfang der Dienstleistungen später anpassen?",
-                    answer: "Selbstverständlich! Wir wissen, dass sich Anforderungen ändern können. Daher bieten wir flexible Lösungen an und passen unsere Dienstleistungen jederzeit an Ihre aktuellen Bedürfnisse an.",
-                    delay: 500
                   }
                 ].map((faq, index) => (
                   <div 

@@ -69,13 +69,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            
-            <Link 
-              to="/login" 
-              className="rok-button-outline"
-            >
-              Login
-            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -114,12 +107,6 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Link
-            to="/login"
-            className="block w-full text-center rok-button-primary mt-4"
-          >
-            Login
-          </Link>
         </div>
       </div>
     </nav>

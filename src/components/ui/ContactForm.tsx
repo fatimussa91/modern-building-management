@@ -22,24 +22,49 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Use the email.js library to send the email directly
+      const serviceID = 'default_service'; // Replace with your Service ID
+      const templateID = 'template_id'; // Replace with your Template ID
+      const userID = 'user_id'; // Replace with your User ID
       
-      // Success message
-      toast({
-        title: "Nachricht gesendet",
-        description: "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.",
-        variant: "default",
+      // Send email directly
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          service_id: serviceID,
+          template_id: templateID,
+          user_id: userID,
+          template_params: {
+            from_name: formData.name,
+            from_email: formData.email,
+            from_phone: formData.phone,
+            message: formData.message
+          }
+        })
       });
       
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      if (response.ok) {
+        // Success message
+        toast({
+          title: "Nachricht gesendet",
+          description: "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.",
+          variant: "default",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
     } catch (error) {
       // Error message
       toast({
@@ -69,8 +94,8 @@ const ContactForm = () => {
             <div>
               <h4 className="font-medium">Adresse</h4>
               <address className="text-muted-foreground not-italic mt-1">
-                Musterstraße 123<br />
-                12345 Musterstadt<br />
+                Gottesackerstraße 1<br />
+                85221 Dachau-Udlding<br />
                 Deutschland
               </address>
             </div>
@@ -81,10 +106,10 @@ const ContactForm = () => {
             <div>
               <h4 className="font-medium">Telefon</h4>
               <a 
-                href="tel:+49123456789" 
+                href="tel:+4917624320200" 
                 className="text-muted-foreground hover:text-rok-600 transition-colors block mt-1"
               >
-                +49 (0) 123 456 789
+                +49 176 24320200
               </a>
             </div>
           </div>
@@ -94,10 +119,10 @@ const ContactForm = () => {
             <div>
               <h4 className="font-medium">E-Mail</h4>
               <a 
-                href="mailto:info@rok-gebaeudemanagement.de" 
+                href="mailto:fatimussa91@gmail.com" 
                 className="text-muted-foreground hover:text-rok-600 transition-colors block mt-1"
               >
-                info@rok-gebaeudemanagement.de
+                fatimussa91@gmail.com
               </a>
             </div>
           </div>

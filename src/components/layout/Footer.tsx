@@ -7,8 +7,6 @@ import {
   MapPin, 
   Facebook, 
   Instagram, 
-  Twitter, 
-  Linkedin, 
   ArrowRight 
 } from 'lucide-react';
 import Logo from '../ui/Logo';
@@ -19,7 +17,7 @@ const Footer = () => {
   return (
     <footer className="bg-rok-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Company Info */}
           <div className="space-y-4">
             <Logo variant="white" size="lg" />
@@ -35,14 +33,6 @@ const Footer = () => {
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
-              </a>
             </div>
           </div>
           
@@ -51,16 +41,16 @@ const Footer = () => {
             <h5 className="font-semibold text-lg mb-5">Schnelllinks</h5>
             <ul className="space-y-3">
               {[
-                { name: 'Startseite', path: '/' },
-                { name: 'Über uns', path: '/about' },
-                { name: 'Leistungen', path: '/services' },
-                { name: 'Kontakt', path: '/contact' },
+                { name: 'Startseite', path: '/#home' },
+                { name: 'Über uns', path: '/#about' },
+                { name: 'Leistungen', path: '/#services' },
+                { name: 'Kontakt', path: '/#contact' },
                 { name: 'Datenschutz', path: '#' },
                 { name: 'Impressum', path: '#' },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    to={link.path}
+                  <a 
+                    href={link.path}
                     className="text-gray-300 hover:text-white transition-colors flex items-center group"
                   >
                     <ArrowRight 
@@ -68,35 +58,7 @@ const Footer = () => {
                       className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"
                     />
                     {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Services */}
-          <div>
-            <h5 className="font-semibold text-lg mb-5">Leistungen</h5>
-            <ul className="space-y-3">
-              {[
-                'Gebäudereinigung',
-                'Hausmeisterservice',
-                'Technisches Facility Management',
-                'Objektbetreuung',
-                'Grünflächenpflege',
-                'Winterdienst',
-              ].map((service) => (
-                <li key={service}>
-                  <Link 
-                    to="/services"
-                    className="text-gray-300 hover:text-white transition-colors flex items-center group"
-                  >
-                    <ArrowRight 
-                      size={14} 
-                      className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"
-                    />
-                    {service}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -109,21 +71,21 @@ const Footer = () => {
               <li className="flex">
                 <MapPin size={20} className="text-rok-400 mr-3 flex-shrink-0 mt-1" />
                 <span className="text-gray-300">
-                  Musterstraße 123<br />
-                  12345 Musterstadt<br />
+                  Gottesackerstraße 1<br />
+                  85221 Dachau-Udlding<br />
                   Deutschland
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-rok-400 mr-3 flex-shrink-0" />
-                <a href="tel:+49123456789" className="text-gray-300 hover:text-white transition-colors">
-                  +49 (0) 123 456 789
+                <a href="tel:+4917624320200" className="text-gray-300 hover:text-white transition-colors">
+                  +49 176 24320200
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-rok-400 mr-3 flex-shrink-0" />
-                <a href="mailto:info@rok-gebaeudemanagement.de" className="text-gray-300 hover:text-white transition-colors">
-                  info@rok-gebaeudemanagement.de
+                <a href="mailto:fatimussa91@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                  fatimussa91@gmail.com
                 </a>
               </li>
             </ul>
