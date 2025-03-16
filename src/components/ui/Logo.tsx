@@ -8,17 +8,23 @@ interface LogoProps {
 
 const Logo = ({ className, size = 'md' }: LogoProps) => {
   const sizeClasses = {
-    sm: 64, // Adjust width/height for small size
+    sm: 64, // Small size
     md: 128, // Medium size
     lg: 192, // Large size
   };
 
   return (
     <div className={cn('transition-all duration-200 transform hover:scale-105', className)}>
-     <img src="/Medien.jpg" alt="Logo" className="w-32 h-auto" />
+      {/* ✅ Correct way to load a public image in React */}
+      <img 
+        src="/Medien.jpg" 
+        alt="Company Logo"
+        width={sizeClasses[size]}
+        height="auto"
+        className="object-contain"
+      />
     </div>
   );
 };
 
 export default Logo;
-
