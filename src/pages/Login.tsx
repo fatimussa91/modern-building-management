@@ -30,7 +30,7 @@ const Login = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Mock login check (in a real app, this would be a server validation)
-      if (formData.email === 'admin@rok-gebaeudemanagement.de' && formData.password === 'admin') {
+      if (formData.email === 'fatimussa91@gmail.com' && formData.password === 'admin') {
         // Success message and redirect
         toast({
           title: "Login erfolgreich",
