@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image'; // Use this if you're using Next.js
 import { cn } from '@/lib/utils';
 import MedienImage from '@/components/layout/Medien.jpg'; // Adjust path based on your structure
 
