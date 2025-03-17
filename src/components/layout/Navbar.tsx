@@ -32,13 +32,20 @@ const Navbar = () => {
   // Smooth scroll function
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
     e.preventDefault();
+    setIsOpen(false);
+    
+    // Handle case when we're not on the index page
+    if (!window.location.hash && !window.location.pathname.includes('#')) {
+      window.location.href = '/' + target;
+      return;
+    }
+    
     const section = document.querySelector(target);
     if (section) {
       window.scrollTo({
         top: section.getBoundingClientRect().top + window.scrollY - 100,
         behavior: 'smooth'
       });
-      setIsOpen(false);
     }
   };
 
@@ -54,7 +61,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Logo size="md" />
+          <a href="#home" onClick={(e) => scrollToSection(e, '#home')}>
+            <Logo size="sm" />
+          </a>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
@@ -63,7 +72,7 @@ const Navbar = () => {
                 key={link.path}
                 href={link.path}
                 onClick={(e) => scrollToSection(e, link.path)}
-                className="text-sm font-medium transition-colors hover:text-rok-500 relative py-2 text-foreground/80"
+                className="text-sm font-medium transition-colors hover:text-cyan-500 relative py-2 text-foreground/80"
               >
                 {link.name}
               </a>

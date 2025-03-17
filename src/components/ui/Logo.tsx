@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -15,10 +16,10 @@ const Logo = ({ className, size = 'md' }: LogoProps) => {
 
   return (
     <div className={cn('transition-all duration-200 transform hover:scale-105', className)}>
-      {/* ✅ Correct way to load a public image in React */}
+      {/* Logo image */}
       <img 
         src="/Medien.jpg" 
-        alt="Company Logo"
+        alt="ROK Gebäudemanagement Logo"
         width={sizeClasses[size]}
         height="auto"
         className="object-contain"

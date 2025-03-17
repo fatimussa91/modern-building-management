@@ -26,13 +26,13 @@ const ServiceCard = ({
       </div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-muted-foreground mb-4">{description}</p>
-      <button 
+      <a 
+        href="#contact" 
         className="inline-flex items-center text-cyan-600 font-medium hover:text-cyan-700 group"
-        onClick={() => window.location.href = '#contact'}
       >
         Anfrage senden
         <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-      </button>
+      </a>
     </div>
   );
 };
