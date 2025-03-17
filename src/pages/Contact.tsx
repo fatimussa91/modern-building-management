@@ -32,7 +32,9 @@ const Contact = () => {
         
         {/* Contact Form Section */}
         <section className="page-container">
-          <ContactForm />
+          <div className="max-w-lg mx-auto">
+            <ContactForm />
+          </div>
         </section>
         
         {/* Map Section */}
@@ -47,7 +49,7 @@ const Contact = () => {
             
             <div className="rounded-xl overflow-hidden shadow-lg animate-fade-up" style={{ animationDelay: "100ms" }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.4092231792297!2d13.3767408!3d52.5162746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBrandenburg%20Gate!5e0!3m2!1sen!2sde!4v1638447137099!5m2!1sen!2sde" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2651.0990151663014!2d11.4289945!3d48.264332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7a921f0e9a95%3A0x9ef949aba60e5e89!2sGottesackerstra%C3%9Fe%201%2C%2085221%20Dachau!5e0!3m2!1sde!2sde!4v1718641407788!5m2!1sde!2sde"
                 width="100%" 
                 height="450" 
                 style={{ border: 0 }} 

@@ -90,14 +90,19 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-rok-400 mr-3 flex-shrink-0" />
-                <a href="tel:+4917624320200" className="text-gray-300 hover:text-white transition-colors">
-                  +49 176 24320200
-                </a>
+                <div className="text-gray-300">
+                  <a href="tel:+4917624320200" className="hover:text-white transition-colors block">
+                    +49 176 24320200
+                  </a>
+                  <a href="tel:+4915782786519" className="hover:text-white transition-colors block mt-1">
+                    +49 1578 2786519
+                  </a>
+                </div>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-rok-400 mr-3 flex-shrink-0" />
-                <a href="mailto:info@rokgebaeudemanagement.de" className="text-gray-300 hover:text-white transition-colors">
-                  info@rokgebaeudemanagement.de
+                <a href="mailto:info@rok.de" className="text-gray-300 hover:text-white transition-colors">
+                  info@rok.de
                 </a>
               </li>
             </ul>

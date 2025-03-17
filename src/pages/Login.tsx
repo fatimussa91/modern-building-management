@@ -30,7 +30,7 @@ const Login = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Mock login check (in a real app, this would be a server validation)
-      if (formData.email === 'fatimussa91@gmail.com' && formData.password === 'admin') {
+      if (formData.email === 'info@rok.de' && formData.password === 'admin') {
         // Success message and redirect
         toast({
           title: "Login erfolgreich",
@@ -94,7 +94,7 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="rok-input"
-                placeholder="fatimussa91@gmail.com"
+                placeholder="info@rok.de"
               />
             </div>
             
@@ -150,7 +150,7 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Hinweis: Für die Demo-Version, nutzen Sie:<br />
-              <span className="font-medium">E-Mail: fatimussa91@gmail.com</span><br />
+              <span className="font-medium">E-Mail: info@rok.de</span><br />
               <span className="font-medium">Passwort: admin</span>
             </p>
           </div>

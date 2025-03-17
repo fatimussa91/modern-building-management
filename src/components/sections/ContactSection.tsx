@@ -17,7 +17,6 @@ const ContactSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="bg-white p-8 rounded-xl shadow-lg animate-fade-up">
-            <h3 className="text-xl font-semibold mb-6">Kontaktformular</h3>
             <ContactForm />
           </div>
           
@@ -48,7 +47,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">E-Mail</h4>
                   <p className="text-muted-foreground">
-                    <a href="mailto:fatimussa91@gmail.com" className="hover:text-cyan-600">fatimussa91@gmail.com</a>
+                    <a href="mailto:info@rok.de" className="hover:text-cyan-600">info@rok.de</a>
                   </p>
                 </div>
               </div>
