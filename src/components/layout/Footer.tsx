@@ -31,7 +31,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Company Info */}
           <div className="space-y-4">
-            <Logo variant="white" size="lg" />
+            <div className="max-w-[200px]">
+              <Logo variant="white" size="sm" />
+            </div>
             <p className="text-gray-300 mt-4 max-w-xs">
               Professionelles Gebäudemanagement und umfassende Gebäudedienstleistungen für Ihre Immobilien.
             </p>
