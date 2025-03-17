@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
             <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition duration-300">
               <img 
-                src="./lovable-uploads/a5fc735a-1f11-4b71-8e15-837dc21ab40e.png" 
+                src="./ROKProfessional.jpeg" 
                 alt="ROK Gebäudemanagement Team" 
                 className="w-full h-auto object-cover"
               />
