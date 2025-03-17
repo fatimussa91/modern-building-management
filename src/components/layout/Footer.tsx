@@ -8,7 +8,7 @@ import {
   Instagram, 
   ArrowRight 
 } from 'lucide-react';
-import Logo from './ui/Logo';
+import Logo from '../ui/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
