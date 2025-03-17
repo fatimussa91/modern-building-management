@@ -5,9 +5,10 @@ import { cn } from '@/lib/utils';
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  variant?: 'default' | 'white';
 }
 
-const Logo = ({ className, size = 'md' }: LogoProps) => {
+const Logo = ({ className, size = 'md', variant = 'default' }: LogoProps) => {
   const sizeClasses = {
     sm: 64, // Small size
     md: 128, // Medium size
@@ -22,7 +23,10 @@ const Logo = ({ className, size = 'md' }: LogoProps) => {
         alt="ROK Gebäudemanagement Logo"
         width={sizeClasses[size]}
         height="auto"
-        className="object-contain"
+        className={cn(
+          "object-contain",
+          variant === 'white' && "brightness-0 invert"
+        )}
       />
     </div>
   );
