@@ -17,9 +17,9 @@ const Logo = ({ className, size = 'md', variant = 'default' }: LogoProps) => {
 
   return (
     <div className={cn('transition-all duration-200 transform hover:scale-105', className)}>
-      {/* Logo image */}
+      {/* Logo image - updated path for GitHub Pages compatibility */}
       <img 
-        src="/Medien.jpg" 
+        src="./Medien.jpg" 
         alt="ROK Gebäudemanagement Logo"
         width={sizeClasses[size]}
         height="auto"
