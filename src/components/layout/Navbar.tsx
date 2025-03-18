@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from '../ui/Logo';
@@ -31,15 +32,12 @@ const Navbar = () => {
     e.preventDefault();
     setIsOpen(false);
     
-    if (!window.location.hash && !window.location.pathname.includes('#')) {
-      window.location.href = '/' + target;
-      return;
-    }
+    const sectionId = target.replace('#', '');
+    const section = document.getElementById(sectionId);
     
-    const section = document.querySelector(target);
     if (section) {
       window.scrollTo({
-        top: section.getBoundingClientRect().top + window.scrollY - 100,
+        top: section.offsetTop - 100,
         behavior: 'smooth'
       });
     }

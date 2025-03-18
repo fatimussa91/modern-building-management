@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Phone, 
@@ -12,13 +13,16 @@ import Logo from '../ui/Logo';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
-  // Smooth scroll function
+  // Improved smooth scroll function
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
     e.preventDefault();
-    const section = document.querySelector(target);
+    
+    const sectionId = target.replace('#', '');
+    const section = document.getElementById(sectionId);
+    
     if (section) {
       window.scrollTo({
-        top: section.getBoundingClientRect().top + window.scrollY - 100,
+        top: section.offsetTop - 100,
         behavior: 'smooth'
       });
     }

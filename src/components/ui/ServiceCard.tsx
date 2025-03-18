@@ -16,6 +16,17 @@ const ServiceCard = ({
   icon, 
   delay = 0
 }: ServiceCardProps) => {
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      window.scrollTo({
+        top: contactSection.offsetTop - 100,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div 
       className="bg-white rounded-xl p-6 shadow-md border-t-4 border-t-cyan-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-up"
@@ -28,6 +39,7 @@ const ServiceCard = ({
       <p className="text-muted-foreground mb-4">{description}</p>
       <a 
         href="#contact" 
+        onClick={scrollToContact}
         className="inline-flex items-center text-cyan-600 font-medium hover:text-cyan-700 group"
       >
         Anfrage senden
