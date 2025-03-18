@@ -7,7 +7,7 @@ const ServicesSection = () => {
   const services = [
     {
       title: 'Gebäudereinigung',
-      description: 'Büro-, Treppenhaus und Unterhaltsreinigung, Fenster- und Fassadenreinigung, Tiefgaragen- und Industriereinigung.',
+      description: 'Büro-, Treppenhaus und Unterhaltsreinigung, Fenster- und Fassadenreinigung, Tiefgaragen- und Parkplatzreinigung,  Baureinigung, Industriereinigung.',
       icon: <Brush className="w-6 h-6" />,
       delay: 100
     },
