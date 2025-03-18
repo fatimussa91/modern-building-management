@@ -31,10 +31,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="max-w-[200px]">
+            <div className="max-w-[250px]">
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')}>
-            <Logo size="sm" />
-          </a>
+                <Logo size="md" variant="white" />
+              </a>
             </div>
             <p className="text-gray-300 mt-4 max-w-xs">
               Professionelles Gebäudemanagement und umfassende Gebäudedienstleistungen für Ihre Immobilien.

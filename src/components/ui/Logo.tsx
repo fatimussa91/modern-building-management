@@ -10,9 +10,9 @@ interface LogoProps {
 
 const Logo = ({ className, size = 'md', variant = 'default' }: LogoProps) => {
   const sizeClasses = {
-    sm: 64, // Small size
-    md: 128, // Medium size
-    lg: 192, // Large size
+    sm: 100, // Increased from 64
+    md: 150, // Increased from 128
+    lg: 200, // Increased from 192
   };
 
   return (
