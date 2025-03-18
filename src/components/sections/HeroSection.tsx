@@ -26,12 +26,12 @@ const HeroSection = () => {
               <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 md:py-4 md:text-lg md:px-10">
                 Jetzt unverbindliches Angebot einholen
               </a>
-              <div className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                <Phone className="mr-2 h-5 w-5 text-cyan-600" />
-                <a href="tel:+4917624320200" className="mr-2">+49 176 24320200</a>
-                <span className="mx-1">|</span>
-                <a href="tel:+4915782786519">+49 1578 2786519</a>
-              </div>
+              <div className="inline-flex items-center justify-center px-6 py-3 border border-cyan-600 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transition-colors shadow-md md:py-4 md:text-lg md:px-8">
+  <Phone className="mr-2 h-5 w-5" />
+  <a href="tel:+4917624320200" className="mr-2 text-white hover:text-gray-100">+49 176 24320200</a>
+  <span className="mx-2 text-gray-200">•</span>
+  <a href="tel:+4915782786519" className="text-white hover:text-gray-100">+49 1578 2786519</a>
+</div>
             </div>
           </div>
           <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
