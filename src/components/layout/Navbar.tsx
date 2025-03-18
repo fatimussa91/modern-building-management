@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from '../ui/Logo';
@@ -15,7 +14,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -29,12 +27,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Smooth scroll function
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
     e.preventDefault();
     setIsOpen(false);
     
-    // Handle case when we're not on the index page
     if (!window.location.hash && !window.location.pathname.includes('#')) {
       window.location.href = '/' + target;
       return;
@@ -59,13 +55,12 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
-          {/* Logo */}
-          <a href="#home" onClick={(e) => scrollToSection(e, '#home')}>
+        <div className="flex justify-between items-center h-20 md:h-24">
+          <a href="#home" onClick={(e) => scrollToSection(e, '#home')} 
+             className="bg-white/80 rounded-md shadow-sm">
             <Logo size="sm" />
           </a>
           
-          {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navLinks.map((link) => (
               <a
@@ -79,7 +74,6 @@ const Navbar = () => {
             ))}
           </div>
           
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               type="button"
@@ -97,7 +91,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu panel */}
       <div
         className={cn(
           'md:hidden transition-all duration-300 ease-in-out overflow-hidden',

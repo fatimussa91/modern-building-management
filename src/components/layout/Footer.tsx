@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Phone, 
@@ -29,11 +28,11 @@ const Footer = () => {
     <footer className="bg-rok-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Company Info */}
+          {/* Company Info - updated logo container */}
           <div className="space-y-4">
-            <div className="max-w-[250px]">
+            <div className="max-w-[250px] bg-white p-2 rounded-md">
               <a href="#home" onClick={(e) => scrollToSection(e, '#home')}>
-                <Logo size="md" variant="white" />
+                <Logo size="md" variant="default" />
               </a>
             </div>
             <p className="text-gray-300 mt-4 max-w-xs">
