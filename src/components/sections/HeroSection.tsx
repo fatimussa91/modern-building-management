@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckCircle, Phone } from 'lucide-react';
 
@@ -39,15 +38,14 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="animate-fade-up order-1 md:order-2" style={{ animationDelay: "200ms" }}>
-         <div className="animate-fade-up order-1 md:order-2" style={{ animationDelay: "200ms" }}>
-  <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition duration-300 max-w-md mx-auto">
-    <img 
-      src="./Rok-workers.webp" 
-      alt="ROK Gebäudemanagement Team" 
-      className="w-full h-auto object-contain"
-    />
-  </div>
-</div>
+            <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition duration-300 max-w-md mx-auto">
+              <img 
+                src="./Rok-workers.webp" 
+                alt="ROK Gebäudemanagement Team" 
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
