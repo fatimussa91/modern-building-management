@@ -47,7 +47,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">E-Mail</h4>
                   <p className="text-muted-foreground">
-                    <a href="mailto:info@rok.de" className="hover:text-cyan-600">info@rok.de</a>
+                    <a href="mailto:info@rokgebeudemanagement.de" className="hover:text-cyan-600">info@rokgebeudemanagement.de</a>
                   </p>
                 </div>
               </div>

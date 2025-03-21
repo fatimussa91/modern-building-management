@@ -43,7 +43,8 @@ const Index = () => {
           from_name: formData.name,
           reply_to: formData.email,
           phone: formData.phone,
-          message: formData.message
+          message: formData.message,
+          to_email: "info@rokgebeudemanagement.de"
         }
       );
       

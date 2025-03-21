@@ -34,7 +34,8 @@ const ContactForm = () => {
           from_name: formData.name,
           from_email: formData.email,
           from_phone: formData.phone,
-          message: formData.message
+          message: formData.message,
+          to_email: "info@rokgebeudemanagement.de"
         }
       );
       
