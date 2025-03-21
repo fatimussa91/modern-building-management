@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CheckCircle, Phone } from 'lucide-react';
 
@@ -21,23 +22,23 @@ const HeroSection = () => {
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mb-8">
               ROK Gebäudemanagement bietet umfassende Dienstleistungen rund um Ihre Immobilie – von Reinigung über Hausmeisterservice bis hin zur Sicherheit.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col space-y-4 mb-8">
               <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 md:py-3 md:text-lg md:px-8 whitespace-normal text-center">
                 Jetzt unverbindliches Angebot einholen
               </a>
-              <div className="inline-flex flex-col sm:flex-row items-center justify-center px-4 py-3 border border-cyan-600 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transition-colors shadow-md md:py-3 md:text-lg">
-                <div className="flex items-center">
+              <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:space-x-4">
+                <div className="inline-flex items-center px-4 py-3 border border-cyan-600 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transition-colors shadow-md">
                   <Phone className="mr-2 h-5 w-5" />
-                  <a href="tel:+4917624320200" className="text-white hover:text-gray-100 whitespace-nowrap">+4917624320200</a>
+                  <a href="tel:+4917624320200" className="text-white hover:text-gray-100 whitespace-nowrap">+49 176 2432 0200</a>
                 </div>
-                <span className="mx-2 text-gray-200 hidden sm:inline">•</span>
-                <div className="flex items-center mt-2 sm:mt-0">
-                  <a href="tel:+4915782786519" className="text-white hover:text-gray-100 whitespace-nowrap">+4915782786519</a>
+                <div className="inline-flex items-center px-4 py-3 border border-cyan-600 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transition-colors shadow-md">
+                  <Phone className="mr-2 h-5 w-5" />
+                  <a href="tel:+4915782786519" className="text-white hover:text-gray-100 whitespace-nowrap">+49 157 8278 6519</a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="animate-fade-up order-1 md:order-2" style={{ animationDelay: "200ms" }}>
+          <div className="animate-fade-up order-1 md:order-2 flex justify-center" style={{ animationDelay: "200ms" }}>
             <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition duration-300 max-w-md mx-auto">
               <img 
                 src="./Rok-workers.webp" 
